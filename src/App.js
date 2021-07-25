@@ -1,26 +1,16 @@
 import React from "react"
 
-import Header from "./components/Header/Header"
-import Button from "./components/Button/Button"
+import {Categories, Header} from "./components"
 
 const App = () => (
   <div className="wrapper">
     <Header/>
-    <Button outline>Кнопочка</Button>
-    <Button>Кнопочка</Button>
     <div className="content">
       <div className="container">
         <div className="content__top">
-          <div className="categories">
-            <ul>
-              <li className="active">Все</li>
-              <li>Мясные</li>
-              <li>Вегетарианская</li>
-              <li>Гриль</li>
-              <li>Острые</li>
-              <li>Закрытые</li>
-            </ul>
-          </div>
+          <Categories
+            onClickItem={(item) => alert(item)}
+            items={["Мясные", "Вегетарианская", "Гриль", "Острые", "Закрытые"]}/>
           <div className="sort">
             <div className="sort__label">
               <svg

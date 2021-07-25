@@ -1,4 +1,5 @@
 import logo from "../../assets/img/pizza-logo.svg"
+import {Button} from "../index"
 
 const Header = (props) => {
   return (
@@ -12,7 +13,7 @@ const Header = (props) => {
           </div>
         </div>
         <div className="header__cart">
-          <a href="/cart.html" className="button button--cart">
+          <Button className="button--cart">
             <span>520 ₽</span>
             <div className="button__delimiter"></div>
             <svg
@@ -45,7 +46,7 @@ const Header = (props) => {
               />
             </svg>
             <span>3</span>
-          </a>
+          </Button>
         </div>
       </div>
     </div>
