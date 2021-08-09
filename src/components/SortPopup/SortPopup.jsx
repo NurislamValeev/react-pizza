@@ -1,3 +1,4 @@
+import React from "react"
 import {useEffect, useRef, useState} from "react"
 
 const SortPopup = ({items}) => {
@@ -62,4 +63,4 @@ const SortPopup = ({items}) => {
   )
 }
 
-export default SortPopup
+export default React.memo(SortPopup)

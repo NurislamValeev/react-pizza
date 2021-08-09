@@ -1,45 +1,31 @@
-import React, {useEffect, useState} from "react"
+import React, {useEffect} from "react"
 import {Route} from 'react-router-dom'
-import {connect} from "react-redux"
+import {useDispatch} from "react-redux"
 
 import {Header} from "./components"
 import {Cart, Home} from "./pages"
 import {setPizzas} from "./redux/actions/pizzas"
 
-const App = (props) => {
-
-  // const [pizzas, setPizzas] = useState([])
+const App = () => {
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    fetch('http://localhost:3000/db.json')
+    fetch('http://localhost:3001/pizzas')
       .then((res) => res.json())
       .then((data) => {
-        props.setPizzas(data.pizzas)
+        dispatch(setPizzas(data))
       })
   }, [])
-
-  console.log(props)
 
   return (
     <div className="wrapper">
       <Header/>
       <div className="content">
-        <Route exact path='/' render={() => <Home pizzas={props.items}/>}/>
+        <Route exact path='/' component={Home}/>
         <Route exact path='/cart' component={Cart}/>
       </div>
     </div>
   )
 }
 
-const mapStateToProps = (state) => {
-  return {
-    items: state.pizzasReducer.items,
-    filters: state.filtersReducer
-  }
-}
-
-const mapDispatchToProps = {
-  setPizzas
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default App

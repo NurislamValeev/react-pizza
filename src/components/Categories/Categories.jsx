@@ -5,6 +5,7 @@ const Categories = ({items, onClickItem}) => {
 
   const onSelectItem = (index) => {
     setActiveItem(index)
+    onClickItem(index)
   }
 
   const elements = items && items.map(
@@ -26,4 +27,4 @@ const Categories = ({items, onClickItem}) => {
   )
 }
 
-export default Categories
+export default React.memo(Categories)
