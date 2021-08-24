@@ -22,7 +22,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "concurrently \"react-scripts start\"  \"json-server -p 3001 -w public/db.json\"",
+    "start": "concurrently \"react-scripts start\"  \"json-server --watch public/db.json\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "server": "node server.js"
