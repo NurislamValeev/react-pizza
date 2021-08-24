@@ -21,12 +21,10 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "server": "node server.js",
-    "json-server": "json-server --watch public/db.json --port=3001"
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js",
+    "server": "node server.js"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +46,6 @@
     ]
   },
   "devDependencies": {
-    "express": "^4.17.1"
+
   }
 }
