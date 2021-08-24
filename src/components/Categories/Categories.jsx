@@ -23,7 +23,7 @@ const Categories = ({activeCategory, items, onClickCategory}) => {
 }
 
 Categories.propTypes = {
-  activeCategory: PropTypes.oneOf([PropTypes.number, null]),
+  activeCategory: PropTypes.oneOfType([PropTypes.number, PropTypes.oneOf([null])]),
   items: PropTypes.arrayOf(PropTypes.string).isRequired,
   onClickCategory: PropTypes.func.isRequired
 
