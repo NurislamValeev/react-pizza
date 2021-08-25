@@ -40,7 +40,6 @@ const Cart = (props) => {
   }
 
   return (
-    <div className="content">
       <div className="container container--cart">
         {
           totalCount
@@ -129,7 +128,6 @@ const Cart = (props) => {
             </div>
         }
       </div>
-    </div>
   )
 }
 
